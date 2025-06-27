@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const postFiles = await import.meta.glob('./*.astro', { eager: true });
+
+const allPosts = Object.entries(postFiles)
+  .map(([path, post]) => {
+    const fm = post.frontmatter || {};
+    return {
+      url: path.replace('./', '/work/').replace('.astro', ''),
+      ...fm,
+    };
+  })
+  // Only include ones with a title
+  .filter(post => post.title)
+  // Sort newest first
+  .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+---
+<Layout>
+  <main>
+    <h1>All Posts</h1>
+
+    {allPosts.length === 0 ? (
+      <p>No posts yet—check back soon!</p>
+    ) : (
+      <ul class="post-grid">
+        {allPosts.map(post => (
+          <li class="post-card" key={post.url}>
+            <h3><a href={post.url}>{post.title}</a></h3>
+            <small>{post.pubDate}</small>
+            <p class="post-description">{post.description}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+  </main>
+</Layout>

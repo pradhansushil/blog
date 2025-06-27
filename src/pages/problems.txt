@@ -1,0 +1,48 @@
+Problem 1: My first post won't show up in the latest posts section.
+- Cause:
+  - Missing or improperly defined frontmatter in the post file.
+- Attempts:
+  - Used console.log(postFiles) to inspect imported posts.
+  - Checked specific post file with console.log(postFiles['./work/how_i_found_my_path.astro']).
+  - Modified JS to verify existence of frontmatter.
+  - Tried adding export const frontmatter = {} in post files.
+- Fix:
+  - Added proper frontmatter with title, pubDate, and description in each post file.
+
+Problem 2: The cards ignored the gap and overlapped the '.latest-post h2'.
+- Cause:
+  - Syntax error: missing closing quote on the '.latest-post' class selector.
+- Fix:
+  - Added the missing closing quote to '.latest-post' selector.
+
+Problem 3: The header wouldn't shift down when using 'padding'.
+- Cause:
+  - CSS selector targeted the container (.latest-post) instead of the specific element (h2).
+- Fix:
+  - Targeted the h2 inside '.latest-post' with '.latest-post h2 {}' to apply padding.
+
+Problem 4: Header paragraphs looked too cramped.
+- Cause:
+  - Missing spacing between consecutive paragraphs inside the header.
+- Fix:
+  - Added spacing between paragraphs using the selector '.introduction p + p'.
+
+Problem 5: No space was created between paragraphs after using
+'.introduction p + p { padding-bottom: 1rem; }'.
+- Cause:
+  - Using padding-bottom on paragraphs doesn't create visible space unless there's content below; padding-top is more appropriate.
+- Fix:
+  - Changed to 'padding-top' in '.introduction p + p {}' to create spacing above the following paragraph.
+
+Problem 6: The em dash character (—) was not rendering correctly on the blog post.
+Instead, it showed strange characters like â€” in the browser.
+- Cause:
+  - Character encoding mismatch or improper use of HTML entities.
+- Attempts:
+  - Verified file saved as UTF-8 (without BOM).
+  - Cleared browser cache and forced refresh.
+  - Checked file content with Hex Editor for BOM or corrupt bytes.
+  - Typed em dash manually with Alt + 0151; issue persisted.
+  - Used &emdash; HTML entity, which rendered literally as text.
+- Fix:
+  - Replaced &emdash; with correct HTML entity &mdash; which rendered properly.
