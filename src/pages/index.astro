@@ -4,11 +4,13 @@ import Layout from '../layouts/Layout.astro';
 
 const postFiles = await import.meta.glob('./work/*.astro', { eager: true });
 
+const base = import.meta.env.BASE_URL || '/';
+
 const posts = Object.entries(postFiles)
   .map(([path, post]) => {
     const frontmatter = post.frontmatter || {};
     return {
-      url: new URL(path.replace('./', '/').replace('.astro', ''), import.meta.env.BASE_URL).pathname,
+      url: `${base.replace(/\/$/, '')}${path.replace('./', '/').replace('.astro', '')}`,
       ...frontmatter,
     };
   })
@@ -19,6 +21,7 @@ const posts = Object.entries(postFiles)
 
   .slice(0, 3);
 ---
+
 
 <Layout>
   <main class="main-index">
