@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-white: #fff;
+
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 2rem;
+}
+
+/* for all pages */
+body {
+  background: #2c3e50;
+  color: #f4f4f4;
+  font-family: "Helvetica", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.main-title,
+.section-title {
+  color: var(--color-white);
+}
+
+.main-title {
+  margin-bottom: var(--space-lg);
+}
+
+.introduction p + p,
+section p + p {
+  margin-top: var(--space-lg);
+}
+
+.section-title {
+  margin-block: var(--space-xl) var(--space-lg);
+}
+
+.subheading {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  margin-block: 1.5rem var(--space-md);
+}
+
+p {
+  text-align: justify;
+  font-size: 1.125rem;
+  hyphens: auto;
+}
+
+a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #16a085;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+section + section {
+  margin-top: var(--space-xl);
+}
+
+.main-index {
+  margin: 0 auto;
+  max-width: 43.75rem;
+  padding: var(--space-xl);
+}
+
+footer p {
+  margin: 0 auto;
+  max-width: 40ch;
+  text-align: center;
+}
+
+footer {
+  background-color: #1a252f;
+  padding: 1rem;
+}
+
+/* Only for all posts */
+.main-content {
+  margin: var(--space-lg) 3.75rem;
+}
+
+.post-list li {
+  margin-top: var(--space-md);
+}
+
+.post-list li:last-child {
+  margin-bottom: var(--space-lg);
+}
+
+
+/* Only for homepage */
+.latest-posts .section-title{
+  padding: var(--space-lg) 0 var(--space-sm);
+}
+
+.post-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  
+  margin-top: var(--space-lg);
+}
+
+.post-card {
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  color: black;
+  padding: var(--space-lg);
+  max-width: 700px;
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.post-date {
+  color: #000;
+  font-size: 0.875rem;
+}
+
+.post-description {
+  margin: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+}
+
+.read-more {
+  color: #ff4500;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.view-posts {
+  display: inline-block;
+  
+  padding-top: var(--space-md);
+}
+
+/* For "my-first-deployment" post */
+.problems-section .subheading {
+  color: #ccc;
+  font-weight: 600;
+}
