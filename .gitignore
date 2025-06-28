@@ -1,6 +1,5 @@
 # folders
 .astro/
-dist/
 node_modules/
 .vscode/
 
