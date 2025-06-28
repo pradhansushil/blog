@@ -8,7 +8,7 @@ const posts = Object.entries(postFiles)
   .map(([path, post]) => {
     const frontmatter = post.frontmatter || {};
     return {
-      url: path.replace('./', '/').replace('.astro', ''),
+      url: new URL(path.replace('./', '/').replace('.astro', ''), import.meta.env.BASE_URL).pathname,
       ...frontmatter,
     };
   })
@@ -47,7 +47,7 @@ const posts = Object.entries(postFiles)
         </div>
       )}
 
-      <a href="/work" class="view-posts">View all posts</a>
+      <a href="/blog/work" class="view-posts">View all posts</a>
     </section>
   </main>
 </Layout>
