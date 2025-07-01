@@ -184,3 +184,76 @@ footer {
   color: #ccc;
   font-weight: 600;
 }
+
+@media (max-width: 396px) {
+  /* ===== Global typography and spacing ===== */
+
+  body {
+    font-size: 1rem;
+  }
+
+  /* Headings */
+  .main-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .subheading {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .post-title,
+  .index-subheading {
+    font-size: 1.125rem;
+  }
+
+  .post-date,
+  small {
+    font-size: 0.8125rem;
+  }
+
+  /* ===== Containers ===== */
+
+  .main-index,
+  .main-content {
+    padding: var(--space-lg);
+    margin: 0 auto;
+  }
+
+  .post-card {
+    padding: var(--space-md);
+  }
+
+  /* ===== Only for homepage ===== */
+
+  .view-posts {
+    font-size: 1rem;
+  }
+
+  /* ===== Containers ===== */
+
+  footer p {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 333px) {
+  /* ===== Containers ===== */
+
+  footer p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    max-width: 32ch;
+    padding-inline: var(--space-sm);
+  }
+}
