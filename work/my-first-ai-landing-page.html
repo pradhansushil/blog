@@ -1,0 +1,189 @@
+<!-- Make sure to add title, date, and description within work/index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Favi Icon -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <title>The Sushil's Desk</title>
+
+    <style>
+      /* .future-font {
+        border: 1px solid red;
+        font-family: "Orbitron", sans-serif;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <main class="main-content">
+      <h1 class="main-title">
+        My Journey Building a Product Page with AI Tools
+      </h1>
+      <p>This project was fun — discovering how to use AI generation tools to build my product gallery and even create a surprisingly realistic ad. I originally set out to build a simple landing page inspired by sites like Amazon or Daraz Nepal, but ran into a problem: most of the images I planned to use had logos or branding I couldn't legally include. That's when I turned to AI. What started as a workaround turned into a creative opportunity, and in this post, I'll walk you through how I used AI to generate images, create a video ad, and deploy the final page.
+      </p>
+
+      <section id="why-i-started">
+        <h2 class="section-title">
+          Why I Built a Product Landing Page
+        </h2>
+        <p>I built this project for two reasons: first, it was a requirement for the Responsive Web Design Certification. Second, after asking ChatGPT, it suggested that this would be a strong project to include in my portfolio. Since my goal is to land my first junior frontend web developer role or gain clients as a freelancer, I decided this was a valuable project to showcase.</p>
+
+        <p>Inspired by e-commerce sites like Amazon and Daraz, I thought this would be a great opportunity to explore layouts used in actual product pages.</p>
+
+        <p>That said, I know my gallery isn't on par with how interactive galleries on Amazon or Daraz are — but that comes in the <span class="future-font">future</span>!</p>
+      </section>
+      
+      <section id="learning-while-building">
+        <h2 class="section-title">Learning While Building</h2>
+        <p> To be honest, I'm sure I learned more than I can fully recall for this section. As mentioned earlier, this project was built a few weeks ago as part of the Responsive Web Design Certification from freeCodeCamp. Because of that, I didn't document everything I learned at the time — just the key problems I ran into, which I'll cover in the next section.</p>
+
+        <p><strong>AI Image & Video Generators:</strong> I had heard of AI platforms that could generate images from text prompts or other inputs. However, I didn't know that AI could also generate videos from text. It was one of those things I thought should exist — along with other ideas — but I didn't realize it already did. When I got the idea to create an ad for my product, I discovered that some platforms could generate videos from simple prompts, which was a pleasant surprise.</p>
+
+        <p>I also picked up a few lessons from the challenges I faced during the build, which I'll go over next.</p>
+      </section>
+
+      <section id="mistakes-i-made" class="problems-section">
+        <h2 class="section-title">Mistakes I Made (And What They Taught Me)</h2>
+        <h3 class="subheading">The Navigation Bar Wouldn't Stick After Passing the Hero Banner</h3>
+        <p>
+          This is the same issue I encountered in my "My First Deployment" post. Since it was already explained there, I kept the fix the same here. If you'd like to read that post, you can find it here: 
+          <a href="https://pradhansushil.github.io/blog/work/my-first-deployment.html" 
+             target="_blank" 
+             rel="noopener noreferrer">
+            My First Deployment
+          </a>.
+        </p>
+
+        <p><strong>Reason:</strong> In my original layout, both the <code>.navbar</code> and <code>.hero-title</code> were placed inside the <code>&lt;header&gt;</code> element. I had applied <code>position: sticky;</code> to the <code>.navbar</code>, but it didn't work as expected — the layout made it unclear which container the sticky behavior was relative to, and the extra content inside <code>&lt;header&gt;</code> interfered with it.</p>
+
+        <p><strong>Fix:</strong> I restructured the layout by turning <code>.navbar</code> into a dedicated <code>&lt;nav&gt;</code> inside <code>&lt;header&gt;</code>, and moved the <code>.hero-title</code> into the <code>&lt;main&gt;</code> section. This separation allowed <code>position: sticky;</code> to work properly, as the interfering content was no longer in the same container.</p>
+
+        <h3 class="subheading">One Image Appeared Larger Than the Others in the Gallery and Nested Three Images</h3>
+        <p><strong>Reason:</strong> This happened because the image lacked an explicit height or aspect ratio, and <code>overflow: hidden</code> affected how it was rendered.</p>
+
+        <p><strong>Fix:</strong> I set <code>.img-wrapper</code> to have <code>height: auto</code> and added <code>aspect-ratio: 1 / 1</code> to ensure all images maintained the same proportions. This fixed the inconsistent sizing across the gallery.</p>
+
+        <h3 class="subheading"><code>text-align: justify</code> Was Being Inherited by <code>section p</code> Due to CSS Specificity</h3>
+        <p><strong>Reason:</strong> The <code>section p</code> selector applied <code>text-align: justify</code> globally, and since <code>.pre-order p</code> didn't have a more specific rule, it inherited that style. This was due to CSS specificity — the browser applied the more general <code>section p</code> rule because nothing overrode it.</p>
+
+        <p><strong>Fix:</strong> I explicitly set <code>text-align: center</code> in <code>.pre-order p</code> to override the inherited style.</p>
+
+        <p>Now that I've listed the technical issues I encountered, I've also realized there are some non-technical challenges I keep facing and need to work on.</p>
+
+        <p><strong>Rushing:</strong> I notice many bugs happen because I rush through things and forget simple details — like missing a <code>;</code> at the end of a CSS rule or not properly closing an element.</p>
+
+        <p><strong>Solution:</strong> I need to slow down and take my time. Using a linter would also help catch these mistakes before they cause problems.</p>
+
+        <p><strong>Attention to Detail:</strong> This might be related to rushing, but I often forget punctuation in sentences. Also, I tend to push to GitHub a lot — not always because it's necessary, but because I don't step back to assess the whole project. I focus on one small change, then realize I need to fix markup or styling afterward, so I keep committing and pushing repeatedly.</p>
+
+        <p><strong>Solution:</strong> I need to be more mindful of details and take a step back to assess the entire project before making changes. This will help me avoid unnecessary commits and make the process smoother. I also plan to jot down a checklist before starting a project to better organize what needs to be done.</p>
+
+
+        <p>If you're interested in seeing the full code or the changes I made, you can view the project here: 
+          <a href="https://github.com/pradhansushil/portfolio" target="_blank" rel="noopener noreferrer">GitHub Repo</a>.</p>
+      </section>
+
+      <section id="design-decisions">
+        <h2 class="section-title">Why I Chose This Design</h2>
+        <p>To create a clean and professional look, I chose a dark background using <code>#2c3e50</code> for the <code>body</code>, paired with light text <code>#f4f4f4</code>. This improves readability and reduces eye strain, especially in low-light environments. The dark theme also helps vibrant accents stand out — for example, links use a soft teal <code>#1abc9c</code>, which shifts to <code>#16a085</code> on hover. This subtle transition adds interactivity without being visually distracting. On the homepage, I reversed the color scheme for the <code>.post-card</code> elements, using a light background <code>#fdfdfd</code> and dark text <code>black</code> to visually separate the cards from the rest of the page. For call-to-action links like <code>.read-more</code>, I used <code>#ff4500</code> to draw attention without relying on large buttons. Finally, the footer uses a darker shade <code>#1a252f</code>, which helps ground the page visually. Overall, this palette balances clarity, accessibility, and a bit of personality while staying suitable for a professional blog.</p>
+        <h3 class="subheading">Responsiveness</h3>
+        <p>To ensure the page looks clean and functional across different screen sizes, I used flexbox and CSS grid for layout structure. These allow elements to adjust naturally as the viewport changes. The <code>body</code> uses <code>display: flex</code> with a column direction to stack content vertically, while sections like the post grid rely on <code>grid-template-columns: 1fr</code> to create a single-column layout by default. For spacing and readability, I applied a consistent scale using custom properties like <code>--space-sm</code>, <code>--space-md</code>, and so on — which are easily adjustable across breakpoints.</p>
+
+        <p>Media queries were added at <code>max-width: 396px</code> and <code>max-width: 333px</code> to optimize for smaller devices. These breakpoints adjust font sizes, container padding, and line heights to maintain legibility and prevent layout overflow. For example, font sizes like <code>1.125rem</code> are scaled down to <code>1rem</code> or smaller on compact screens, and padding is reduced to make better use of limited space.</p>
+
+        <p>
+          Together, these techniques help ensure the design remains accessible, readable, and user-friendly across desktops, tablets, and mobile devices.
+        </p>
+
+        <p>
+          In the <a href="https://pradhansushil.github.io/blog/work/my-first-deployment.html" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                  "My First Deployment"
+                </a> 
+          post, I mentioned that I overlooked mobile-first design and intended to prioritize it in future projects. Unfortunately, I slipped up again on this one. This was built before the portfolio project, and at the time, I still had the habit of designing based on my monitor's size. I also neglected to use the Responsive Design Tool available in the browser's DevTools — something I'll be more conscious of moving forward.
+        </p>
+      </section>
+
+      <section id="tools">
+        <h2 class="section-title">Tools I Used</h2>
+        <p>Here are the main tools and resources I used to build this landing page:</p>
+        <ul class="post-list">
+          <li>
+            <strong>HTML & CSS:</strong> Used for structuring and styling the layout.
+          </li>
+
+          <li>
+            <strong>VS Code:</strong> My preferred code editor throughout the project.
+          </li>
+
+          <li>
+            <strong>Git & GitHub:</strong> Used for version control and deploying the site via GitHub Pages.
+          </li>
+
+          <li>
+            <strong>ChatGPT:</strong> Helped with planning, decision-making, and troubleshooting.
+          </li>
+
+          <li>
+            <strong>Microsoft Copilot:</strong> Used to generate the product images.
+          </li>
+
+          <li>
+            <strong>Pictory.AI:</strong> Used to generate the promotional video ad for the landing page.
+          </li>
+
+          <li>
+            <strong>freeCodeCamp:</strong> The platform that inspired this project as part of its certification program.
+          </li>
+
+          <li>
+            <strong>Firefox DevTools:</strong> Used to inspect and debug styling and layout issues.
+          </li>
+        </ul>
+
+        <p>
+          I intentionally kept the stack minimal and beginner-friendly to stay focused on learning good structure, layout, and styling practices without overwhelming myself with too many tools or frameworks.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="section-title">What I Would Do Differently Next Time</h2>
+        <p> If I were to do this project again, the biggest change I'd make is to take a mobile-first approach from the very beginning. I now realize how important it is to prioritize smaller screen experiences before scaling up — not just for responsiveness, but also to simplify layout decisions early on. I'd also spend more time planning the layout and content flow on paper or a wireframe tool before diving into code. This would help reduce back-and-forth restructuring later in the build.</p>
+        
+        <p> Another improvement would be refining my Git workflow. Instead of committing and pushing changes as I go, I'd group related updates into meaningful commits and write clearer commit messages. This would make the project history easier to follow — both for me and for anyone reviewing my work. Lastly, I'd explore accessibility basics a bit more, like contrast ratios and semantic HTML elements, to ensure a more inclusive experience for users.</p>
+      </section>
+
+      <section id="final">
+        <h2 class="section-title">Final Thoughts</h2>
+        <p>This project gave me the chance to combine everything I've learned so far — not just in terms of code, but also how to plan, adapt, and present my work. I explored new tools like AI image and video generators, practiced layout and styling fundamentals, and learned from both technical and non-technical mistakes.</p>
+
+        <p>Although there's still a lot to improve, I'm proud of what I was able to build with my current skill set. More importantly, this experience helped me see how much potential there is to grow. Each project like this brings me one step closer to becoming a confident and capable frontend web developer.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 The Sushil's Desk. All rights reserved.</p>
+      <p> 
+        Want to reach out? 
+        <a href="https://pradhansushil.github.io/portfolio/#contact-form" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          Contact me via my portfolio 
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>
