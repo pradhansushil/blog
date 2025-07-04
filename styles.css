@@ -13,13 +13,11 @@
 
 /* ===== Global layout ===== */
 
-/* Make html and body fill viewport height for flex layouts */
 html,
 body {
   height: 100%;
 }
 
-/* Body as vertical flex container with background, text color, and typography */
 body {
   display: flex;
   flex-direction: column;
@@ -35,7 +33,6 @@ body {
   letter-spacing: 0.2em;
 }
 
-/* Main content grows to fill available vertical space */
 main {
   flex: 1;
 }
@@ -168,6 +165,7 @@ footer {
   font-size: 0.875rem;
 }
 
+/* ===== FIX: Prevent justify bug ===== */
 .post-description {
   margin: var(--space-sm) 0 var(--space-sm) var(--space-lg);
 }
@@ -190,14 +188,13 @@ footer {
   font-weight: 600;
 }
 
-@media (max-width: 396px) {
-  /* ===== Global typography and spacing ===== */
+/* ===== Mobile Styles ===== */
 
+@media (max-width: 396px) {
   body {
     font-size: 1rem;
   }
 
-  /* Headings */
   .main-title {
     font-size: 1.75rem;
     line-height: 1.2;
@@ -217,6 +214,10 @@ footer {
     line-height: 1.5;
   }
 
+  .post-description {
+    text-align: left;
+  }
+
   .post-title,
   .index-subheading {
     font-size: 1.125rem;
@@ -226,8 +227,6 @@ footer {
   small {
     font-size: 0.8125rem;
   }
-
-  /* ===== Containers ===== */
 
   .main-index,
   .main-content {
@@ -239,13 +238,9 @@ footer {
     padding: var(--space-md);
   }
 
-  /* ===== Only for homepage ===== */
-
   .view-posts {
     font-size: 1rem;
   }
-
-  /* ===== Containers ===== */
 
   footer p {
     font-size: 0.9375rem;
@@ -253,12 +248,9 @@ footer {
 }
 
 @media (max-width: 333px) {
-  /* ===== Containers ===== */
-
   footer p {
     font-size: 0.875rem;
     line-height: 1.4;
-    max-width: 32ch;
     padding-inline: var(--space-sm);
   }
 }
