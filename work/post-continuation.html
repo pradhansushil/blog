@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What I Learned &mdash; Part 2 | My Blog</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <!-- Link for CSS styles -->
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+
+  <body>
+    <main class="main-content">
+      <section id="more-things-i-learned">
+        <h2 class="section-title">More Things I Learned While Building My Blog</h2>
+        <p class="intro">
+          In my <a href="my-personal-blog.html" rel="noopener noreferrer">previous post</a>, I talked about some of the key things I learned while building my blog — from setting up Astro to discovering handy CSS tricks like <code>margin-inline</code> and <code>element + element</code>. This post continues from there, covering more insights and questions that came up during the process.
+        </p>
+        <h3 class="subheading">Removing Submodules from a Project</h3>
+        <p>
+          At one point, I experimented with using Git submodules. While they can be useful for splitting large projects or sharing common components, I quickly realized they can also be a headache if you're not careful. I ended up needing to remove one — both from my local directory and GitHub — and learned that it's not as simple as deleting the folder. You need to remove references using Git commands and also make sure your <code>.gitmodules</code> and <code>.git/config</code> files are clean. It was a frustrating but useful experience.
+        </p>
+
+        <p>
+          One important lesson I learned during this process was about the build workflow. I initially pushed the submodule first and then ran <code>npm run build</code> to generate the <code>/dist</code> folder, followed by another push to GitHub. The <code>/dist</code> folder contains the final, production-ready version of the site—the static files that get deployed. Running <code>npm run build</code> compiles and bundles my source code and assets into optimized files for the web.
+        </p>
+
+        <p>
+          In hindsight, it would have been much simpler to run <code>npm run build</code> before creating the submodule and pushing it. That way, the <code>/dist</code> folder would already be included in the initial push, saving me from having to push twice and making the process cleaner and less confusing.
+        </p>
+        <h3 class="subheading">Keeping the Footer at the Bottom of the Page</h3>
+        <p>
+          I learned why it's important to set <code>height: 100%</code> on both the <code>html</code> and <code>body</code> elements to keep the footer at the bottom of the page, even when there isn't much content. Without setting these heights, the footer might appear somewhere in the middle of the screen if the page is short. By ensuring the <code>body</code> fills the viewport height, the footer stays visually “at the bottom” as intended.
+        </p>
+        <h3 class="subheading">What I Know (and Don't Fully Understand) About <code>flex: 1</code></h3>
+        <p>
+          One of the layout tricks I used to keep the footer at the bottom of the page was applying <code>flex: 1</code> to the main content area. I know it's a shorthand for:
+        </p>
+        <ul>
+          <li><code>flex-grow: 1;</code></li>
+          <li><code>flex-shrink: 1;</code></li>
+          <li><code>flex-basis: 0%;</code></li>
+        </ul>
+        <p>
+          I'll be honest — I don't fully understand how all three properties work together just yet. But I do know that using <code>flex: 1</code> helped the main section take up all the remaining space in the layout, pushing the footer down when the content wasn't tall enough. I plan to explore <code>flex-grow</code> and the rest in more detail later, but for now, it does what I need.
+        </p>
+        <h3 class="subheading">Grid vs Flexbox (And That One Misaligned Card)</h3>
+        <p>
+          Finally, a small but interesting detail: If you noticed that one of the blog cards sits slightly lower than the one beside it — good catch. That's just how CSS Grid behaves when rows start independently. I could've switched to Flexbox for perfect alignment, but I chose to stick with Grid for its responsive flexibility. It's a tradeoff I'm okay with for now.
+        </p>
+        <p>
+          Overall, building this blog taught me way more than I expected — not just about HTML and CSS, but also about Git, build workflows, and layout logic. I'm still learning, and that's the whole point of doing projects like this.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 The Sushil's Desk. All rights reserved.</p>
+      <p>
+        Want to reach out?
+        <a href="https://pradhansushil.github.io/portfolio/#contact-form"
+          target="_blank"
+          rel="noopener noreferrer">
+          Contact me via my portfolio
+        </a>
+      </p>
+    </footer>
+  </body>
+  
+</html>
