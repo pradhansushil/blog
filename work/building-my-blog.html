@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <!-- Link CSS from public/styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <title>The Sushil's Desk</title>
+  </head>
+
+  <body>
+    <main class="main-content">
+      <h1 class="main-title">Creating My Blog &mdash; From Idea to Site</h1>
+      <p>At first, I was excited about this project. It was the first one I built entirely from my own inspiration &mdash; not from freeCodeCamp's project ideas or certification requirements. I planned to learn how to manage posts using something similar to a CMS. After some research, I chose Astro, a static site generator (SSG). An SSG lets you focus purely on the frontend without dealing with backend complexity like a traditional CMS. For example, with WordPress &mdash; a popular CMS &mdash; you need to know PHP or rely on someone else to handle the backend for deployment.</p>
+
+      <p>But things didn't go as planned. I ran into so many problems that I felt like pulling my hair out &mdash; issues kept popping up one after another, especially when I started deploying the site (more on those later). Eventually, for the sake of my sanity, I switched back to plain HTML and CSS. Maybe it's just too soon for me to take on SSGs, since I'm still fresh.</p>
+      <section id="why-i-started">
+        <h2 class="section-title">Why Did I Start This Project?</h2>
+        <p>I was researching good projects to include in my portfolio — even as a backend web developer — and I kept hearing that creating a blog was a solid choice. Later, when I decided to focus on frontend development, I had the idea to build a blog where I could talk about what I go through — both to track my progress and reflect, and also to show potential employers or future clients what I've learned.</p>
+
+        <p>Throughout my various careers, I've learned just one thing: you NEED to be able to solve problems — no ifs, ands, or buts about it.</p>
+      </section>
+      
+      <section id="learning-while-building">
+        <h2 class="section-title">Learning While Building My Blog</h2>
+
+        <p>I learned a lot from this project. However, I don't remember everything — mostly because I forgot to jot things down in the middle of all the frustration I experienced.</p>
+
+        <p>That said, the first thing I learned was how to set up Astro. I got a basic understanding of what <code>npm run build</code> and <code>npm run dev</code> do, and I began to understand how Astro's file structure works. For example, when you install npm in your project directory, it generates several folders like <code>components</code>, <code>src</code>, and more. I mainly focused on <code>src</code>. Inside <code>src</code>, there's a <code>layouts</code> directory where you place structural elements like <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>. The <code>pages</code> directory contains the different <code>.html</code> files for your site.</p>
+
+        <p>Could I do this again without some guidance? Probably not. But I'd likely recognize what I'm doing — or give myself a smack on the head and go, “Oh right, this is how I did it last time.”</p>
+
+        <p><strong>margin-inline:</strong> Normally, if I want to adjust only the left and right margins, I'd use something like <code>margin: 0 some-value 0 some-value;</code>. To center an element horizontally, I'd go with <code>margin: 0 auto;</code>. But for me, <code>margin-inline</code> came in really handy. I'm a bit lazy when it comes to typing a lot — especially since it takes me quite a while to put projects together. I even use Emmet shortcuts when writing HTML.</p>
+
+        <p>While editing my CSS, ChatGPT suggested using <code>margin-inline</code>. It offers a shorter way to set the left and right margins without writing the full shorthand. It's especially useful when you don't need to set the top and bottom margins, or if you just want cleaner, more readable code. If you only want to add margins to the top and bottom, you can use <code>margin-block</code>.</p>
+
+        <p><strong>@media viewports:</strong> When I first learned about CSS responsiveness in freeCodeCamp, I thought the <code>480px</code> in <code>@media (max-width: 480px)</code> referred to the actual width of a device. I was wrong — it actually refers to the CSS viewport.</p>
+
+        <p>For example, if you have a 1080p monitor and your browser is fullscreen, the viewport width might be around 1920px. But if you resize the browser to a smaller window, the viewport width shrinks accordingly. So, when you use <code>@media (max-width: 480px)</code>, you're targeting screens (or browser windows) that are 480px wide or less — typically mobile devices.</p>
+
+        <p><strong>element + element:</strong> I wanted to create some space between sections and paragraphs. Instead of relying solely on <code>margin</code> or <code>padding</code>, I wondered if there was another way to do it. After asking ChatGPT, I discovered the <code>element + element</code> selector.</p>
+
+        <p>This selector lets you target elements that come immediately after another of the same type. For example, I used <code>section + section</code> to add space between sections. I could've used CSS variables or grouped the elements differently, but I felt this approach was much cleaner.</p>
+
+        <p>To keep this post from getting too long, I've listed the rest of the things I learned in a separate post. If you'd like to check it out, you can 
+          <a href="post-continuation.html" rel="noopener noreferrer">click here.</a>
+        </p>
+      </section>
+
+      <section id="mistakes-i-made" class="problems-section">
+        <h2 class="section-title">Mistakes I Made (And What They Taught Me)</h2>
+        <p>Similar to what I learned during this blog project, I also forgot some of the problems I ran into due to frustration. I usually keep a <code>problems.txt</code> file to log these issues, but I must have accidentally deleted it while removing Astro’s folder structure. So here’s a reconstructed list based on memory.</p>
+
+        <h3 class="subheading">Ran <code>npm run build</code> After Creating the Submodule</h3>
+        <p>
+          <strong>Reason:</strong> I initially pushed the submodule and then ran <code>npm run build</code> to generate the <code>/dist</code> folder. This resulted in pushing to GitHub twice — once for the submodule and again for the built output.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> Next time, I’ll build the project first, then create and push the submodule. That way, <code>/dist</code> is already included and doesn’t require a second push.
+        </p>
+
+        <h3 class="subheading">
+          Accidentally Deleted My <code>problems.txt</code>
+        </h3>
+        <p>
+          <strong>Reason:</strong> The file was inside <code>src/pages/</code> under the Astro project, and I deleted the entire Astro folder when switching back to HTML/CSS. Since the file wasn’t committed or backed up, it was lost during cleanup.
+        </p>
+        
+        <p>
+          <strong>Fix:</strong> In future projects, I’ll make sure to place important logs in the root directory and commit them early, so I don’t lose them when restructuring.
+        </p>
+
+        <h3 class="subheading">
+          Footer Didn't Stay at the Bottom of the Page
+        </h3>
+        <p>
+          <strong>Reason:</strong> On short pages, the footer appeared halfway up the screen instead of at the bottom. I hadn’t set <code>height: 100%</code> on both the <code>html</code> and <code>body</code> tags.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> I applied <code>height: 100%</code> to both <code>html</code> and <code>body</code>, and used Flexbox to allow the main section to stretch and push the footer down.
+        </p>
+
+        <h3 class="subheading">Blog Cards Didn’t Align at the Top</h3>
+        <p>
+          <strong>Reason:</strong> I used CSS Grid for layout, and it doesn’t force items in the same row to match heights by default. As a result, one blog card looked slightly lower than the other.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> I considered switching to Flexbox for equal-height alignment, but decided to keep Grid for its responsive flexibility. The misalignment was minimal and not a big concern.
+        </p>        
+        <h3 class="subheading">Links Weren’t Working in Astro</h3>
+        <p>
+          <strong>Reason:</strong> I was having trouble getting internal links to work correctly while using Astro. The file paths and routing behavior felt confusing, and I wasn’t sure if I needed to configure something extra or change how I structured my pages.
+        </p>
+
+        <p>
+          <strong>Fix:</strong> After spending too much time troubleshooting and already being frustrated with deployment issues, I decided to drop Astro altogether and build the blog using plain HTML and CSS. This gave me full control and helped simplify the entire workflow.
+        </p>
+      </section>
+
+      <section id="design-decisions">
+        <h2 class="section-title">Why I Chose This Design</h2>
+        <p>When I started this blog, I wasn’t aiming to impress anyone with fancy visuals or animations. I wanted to create a space that felt genuine — something simple yet put together with care. This blog is more about documenting my path than showing off polish. If you're reading this, you're not just looking at a site — you're seeing my process, my learning curve, and how I deal with the ups and downs of building things from scratch. My goal was to keep it clean, focused, and real — something that reflects who I am, not just what I know.</p>
+      </section>
+
+      <section id="tools">
+        <h2 class="section-title">Tools I Used</h2>
+        <p>Here are the main tools and resources I used to build this portfolio:</p>
+        <ul class="post-list">
+          <li>
+            <strong>HTML & CSS:</strong> For structure and styling
+          </li>
+
+          <li>
+            <strong>VS Code:</strong> My go-to IDE
+          </li>
+
+          <li>
+            <strong>Git & GitHub:</strong> For version control and deployment using GitHub Pages
+          </li>
+
+          <li>
+            <strong>ChatGPT:</strong> For planning and problem solving
+          </li>
+
+          <li>
+            <strong>Firefox DevTools:</strong> To inspect and debug layout issues
+          </li>
+        </ul>
+        <p>Right now, I’m keeping the blog built with just HTML and CSS — not because I plan to stop there, but because I’m still building my foundation. I’ve started learning JavaScript and have a basic understanding of things like DOM manipulation, functions, and conditionals. I’m not confident enough to fully apply it yet, but I plan to layer it in gradually. For now, I’m focusing on getting the structure and styling right before moving on to interactivity — and I’ll figure out the rest as I go.</p>
+
+      </section>
+
+      <section id="what-i-would-do-differently">
+        <h2 class="section-title">What I Would Do Differently Next Time</h2>
+        <p>First, if I were to use Astro again (probably not anytime soon), I would build the <code>/dist</code> folder before pushing the repo to GitHub by running <code>npm run build</code>. I believe this would have saved me a lot of the frustrations I faced.</p>
+
+        <p>Since I am still in the beginning phase, I think tackling Astro might have been premature. I have some experience with templating engines like Flask's Jinja2, which made writing HTML much easier — that’s where I was coming from. I thought Astro would simplify the workflow, and in some ways it did, especially for writing posts. Although there was a learning curve and issues like styles not working or posts returning 404 errors, it was still simpler than writing the HTML for every single post manually and making sure the structure and classes were all correct.</p>
+
+        <p>In the near future — most likely within a few weeks — I plan to add a Dark and Light mode toggle. I also intend to implement an authentication system so users can comment on my posts. The authentication will help me manage users effectively.</p>
+
+        <p>I also plan to create a section on the homepage that highlights what's new and what I'm currently working on. This will help keep the content fresh and give visitors a reason to return. I want to make it easy for people to see what I’m up to and what they can expect next.</p>
+
+        <p>Finally, I may focus on SEO optimization so that more users can discover the website. However, I’m still considering this step.</p>
+      </section>
+
+
+      <section id="final">
+        <h2 class="section-title">Final Thoughts</h2>
+        <p>Honestly, I am just glad most of the grunt work is over. Now, I just need to focus on writing posts and creating new features — no more worrying about styles not working, SSG quirks, or mysterious 404 errors.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 The Sushil's Desk. All rights reserved.</p>
+      <p> 
+        Want to reach out? 
+        <a href="https://pradhansushil.github.io/portfolio/#contact-form" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          Contact me via my portfolio 
+        </a>
+      </p>
+    </footer>
+  </body>
+
+</html>
