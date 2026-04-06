@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>The Sushil's Desk</title>
+  </head>
+
+  <body>
+    <main class="main-content">
+      <h1 class="main-title">
+        Building Pump &amp; Iron &mdash; React, Firebase, and a Lot of Lessons
+        Learned
+      </h1>
+
+      <p>
+        When I started thinking about what to build next for my portfolio, a
+        friend offered some advice that resonated with me: create projects that
+        address real issues. He even showed me a web app he built for someone we
+        both know, and it sparked an idea. I looked at businesses I was already
+        familiar with and noticed that a gym renting space from my brother
+        relied entirely on social media for advertising, with no website or
+        booking system. That became my project.
+      </p>
+
+      <p>
+        I even thought about pitching the final product to the gym owner.
+        However, I've been facing some personal challenges lately, and selling
+        is a whole different skill that I'm not ready to tackle right now. So
+        for now, Pump &amp; Iron exists as a portfolio project, and I'm okay
+        with that. Building it with a real business in mind made it feel
+        different from anything else I've created.
+      </p>
+
+      <section id="what-it-does">
+        <h2 class="section-title">What Pump &amp; Iron Does</h2>
+        <p>
+          Pump &amp; Iron is a gym management web app designed for two types of
+          users: customers and admins.
+        </p>
+
+        <p>
+          On the customer side, visitors can browse gym information, view
+          pricing plans, book a tour, sign up for a membership, register for
+          personal training, and join additional classes like yoga or pilates.
+          Once they become members, they can track their payments and manage
+          their class bookings.
+        </p>
+
+        <p>
+          On the admin side, the owner or any assigned admin can see who has
+          paid and who hasn't, manage employees, handle member accounts, and
+          track monthly revenue through a dashboard.
+        </p>
+      </section>
+
+      <section id="why-i-started">
+        <h2 class="section-title">Why I Started This Project</h2>
+        <p>
+          Beyond its real-world inspiration, this project was also my way of
+          diving deeper into frontend development. My last project, this blog,
+          was built with basic HTML and CSS after struggling with Astro. This
+          time, I wanted to challenge myself with React and Tailwind CSS. I
+          should mention that I entered this project knowing about 10% of React.
+          That knowledge came from a previous portfolio project I never
+          completed. I didn't watch tutorials or take a course; I learned by
+          building and used Claude as my real-time teacher. Looking back, I may
+          have pushed myself a bit too hard.
+        </p>
+      </section>
+
+      <section id="what-i-learned">
+        <h2 class="section-title">What I Learned</h2>
+        <p>
+          I learned a great deal from this project, more than I can fully
+          recall, honestly. That's one downside of building something
+          substantial while still learning the basics. Constantly switching
+          between bugs, features, and new concepts means not everything sticks
+          like it would if I took my time.
+        </p>
+
+        <p>
+          That being said, I became quite comfortable with some core React
+          concepts. I'd say I'm about 90% confident with
+          <code>useState</code> now, and I have a solid grasp of
+          <code>useEffect</code>, component structure, and how to separate
+          concerns properly. I also improved my project organization and
+          understanding of parent-child relationships in components.
+        </p>
+
+        <p>Two things stood out to me beyond the basics:</p>
+
+        <p>
+          <strong>Array sorting without mutating state.</strong> In React, you
+          should never change state directly. JavaScript's built-in
+          <code>.sort()</code> does just that &mdash; it modifies the original
+          array. The solution is to create a copy of the array first, then sort
+          that: <code>[...payments].sort(...)</code>. It's a small detail, but
+          understanding why it matters &mdash; React tracks state by reference,
+          so changing it directly can cause missed updates and unexpected
+          behavior &mdash; felt like a significant breakthrough for me.
+        </p>
+
+        <p>
+          <strong>How production apps handle payment data.</strong> I didn't
+          integrate Stripe in this demo, but I researched how real apps manage
+          credit card information. In short, they never store it. Card details
+          go straight from the user's browser to Stripe's servers, and Stripe
+          returns a token. That token is what gets stored in the database
+          &mdash; never the actual card number. Understanding this helped me
+          think beyond just making things work, which is something I can discuss
+          clearly in an interview.
+        </p>
+
+        <p>
+          I've documented the rest of what I learned in detail in the
+          <a
+            href="https://github.com/pradhansushil/pump-iron/blob/master/README.md#what-i-learned"
+            target="_blank"
+            rel="noopener noreferrer"
+            >README on GitHub</a
+          >.
+        </p>
+      </section>
+
+      <section id="mistakes-i-made">
+        <h2 class="section-title">Mistakes I Made</h2>
+        <p>
+          The biggest mistake was the project's scope. I was still getting
+          comfortable with React and Tailwind, yet I decided to build a
+          full-stack production-style app almost entirely from scratch. That was
+          too ambitious. If I could go back, I would have opted for something
+          smaller &mdash; maybe just an admin dashboard and a member dashboard
+          with a simple landing page. For anything beyond that, a
+          straightforward "coming soon" message would have sufficed. That
+          approach would better showcase my abilities without overwhelming
+          myself over 3 to 4 months.
+        </p>
+
+        <p>
+          I also didn't conduct enough design research at the beginning. There
+          was a moment with my employees' page where I had no clear idea on its
+          appearance, leading me to scramble for templates on Google at the last
+          minute. It worked, but some pages ended up feeling inconsistent, like
+          they came from different places. I should have gathered references for
+          every page before starting to build, not just the ones where I got
+          stuck.
+        </p>
+
+        <p>
+          The last mistake was related to pseudocode. I used an AI to help plan
+          the project, and the output was more of a structured blueprint &mdash;
+          phases, steps, what to build, and in what order. That was helpful, but
+          it wasn't true pseudocode. Real pseudocode would have let me think
+          through the actual logic before writing it. I didn't know the
+          difference at the time because I didn't research it, and I assumed the
+          AI had provided what I needed. Lesson learned.
+        </p>
+      </section>
+
+      <section id="bugs">
+        <h2 class="section-title">Bugs Worth Mentioning</h2>
+        <p>
+          I faced numerous bugs throughout this project. Here are two that stood
+          out.
+        </p>
+
+        <p>
+          <strong>The cancel booking bug.</strong> At first, it seemed like a
+          single bug: clicking "Cancel" on a booking did nothing &mdash; no UI
+          update, no notification, nothing. It turned out there were five
+          separate issues hidden within that one bug. I forgot an
+          <code>await</code> keyword, so the function returned a Promise object
+          instead of the actual data. The wrapper function that called it wasn't
+          async, either, creating what's called an orphaned Promise &mdash; it
+          ran, but its outcome was silently ignored. Additionally, the display
+          and cancel logic referenced two different data sources, causing them
+          to be out of sync. There was also a field mismatch where I was using
+          <code>booking.id</code>, searching by <code>b.classId</code> &mdash;
+          two distinct values that wouldn't match. Lastly, the booking objects
+          in Firestore didn't have a <code>classId</code> field, so the code
+          attempted to update a document using <code>undefined</code> as an ID.
+          Five issues, one bug. This taught me a lot about how async code works
+          and the importance of having a single source of truth.
+        </p>
+
+        <p>
+          <strong>The admin session bug.</strong> When an admin created a new
+          member account through the admin panel, the admin got automatically
+          logged out and redirected to the landing page. The new member was
+          created successfully, but the admin's session was lost. The cause was
+          Firebase's <code>createUserWithEmailAndPassword</code>, which
+          automatically signs in the newly created user. Since the app used one
+          shared auth instance, creating a new member replaced the admin's
+          active session with the new member's session, triggering the auth
+          state listener and redirecting everything. The fix was to initialize a
+          secondary Firebase app instance with the same configuration, use that
+          secondary instance to create new member accounts, and then immediately
+          sign it out after creation so the admin's session remained intact.
+        </p>
+
+        <p>
+          For the full list of bugs and how I fixed them, check out the
+          <a
+            href="https://github.com/pradhansushil/pump-iron/blob/master/README.md#problems-and-fixes"
+            target="_blank"
+            rel="noopener noreferrer"
+            >README on GitHub</a
+          >.
+        </p>
+      </section>
+
+      <section id="what-i-would-do-differently">
+        <h2 class="section-title">What I Would Do Differently</h2>
+        <p>
+          Keep the scope small. That's the main takeaway. A focused, polished
+          project tells a better story than a sprawling one with rough edges.
+        </p>
+
+        <p>
+          Conduct design research before writing any code. Look at references
+          for every page, not just the ones where I get stuck.
+        </p>
+
+        <p>
+          Learn what pseudocode really is before the next project and write it
+          myself instead of relying on an AI for that thought process.
+        </p>
+      </section>
+
+      <section id="tools">
+        <h2 class="section-title">Tools I Used</h2>
+        <ul class="tools-list">
+          <li>React</li>
+          <li>HTML</li>
+          <li>Tailwind CSS</li>
+          <li>Firebase</li>
+          <li>Vercel</li>
+          <li>Font Awesome</li>
+          <li>Wave</li>
+          <li>Google Gemini's Nano Banana</li>
+          <li>Chrome DevTools</li>
+        </ul>
+      </section>
+
+      <section id="final">
+        <h2 class="section-title">Final Thoughts</h2>
+        <p>
+          This project frustrated me more than anything I've built so far. Yet,
+          it also taught me more than anything else I've done. I went in with
+          almost no knowledge of React and came out with a full-stack app and a
+          clearer understanding of my capabilities &mdash; and what I still need
+          to improve. That matters.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 The Sushil's Desk. All rights reserved.</p>
+      <p>
+        Want to reach out?
+        <a
+          href="https://pradhansushil.github.io/portfolio/#contact-form"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact me via my portfolio
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>
