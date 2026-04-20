@@ -238,8 +238,8 @@ ul.tools-list {
   }
 
   .post-date,
-  small {
-    font-size: 0.8125rem;
+  .meta-date {
+    font-size: 0.875rem;
   }
 
   .main-index,
