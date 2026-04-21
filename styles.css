@@ -133,6 +133,14 @@ footer {
 
 /* ===== Only for homepage ===== */
 
+.hero-identity {
+  margin-bottom: var(--space-lg);
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
 .latest-posts .section-title {
   padding: var(--space-lg) 0 var(--space-sm);
 }
