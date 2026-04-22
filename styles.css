@@ -145,6 +145,7 @@ footer {
   padding: var(--space-lg) 0 var(--space-sm);
 }
 
+.post-grid,
 .post-grid ul {
   display: grid;
   gap: 1.5rem;
