@@ -14,3 +14,11 @@ The Dev Log is my personal blog where I share the projects I work on, the challe
 - [Developer Workflow & Standards](#developer-workflow--standards)
 - [Challenges & Solutions](#challenges--solutions)
 - [Installation](#installation)
+
+---
+
+## Features
+
+- **Project write-ups:** Each post covers what I built, why I decided to develop it, the obstacles I ran into, solutions I came up with, and lessons I picked up along the way.
+- **Dev origin story:** A dedicated post on how I got started in frontend development.
+- **Ongoing updates:** Add new posts whenever I finsih a project or improve my skills. This way, the blog really shows how I'm progressing over time.
