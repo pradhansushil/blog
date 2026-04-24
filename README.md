@@ -102,4 +102,31 @@ The /dist folder wasn’t there the first time I pushed the submodule. After run
 
 - **Fix:** I learned that equal heights are easier with Flexbox. I kept Grid for its responsiveness since the misalignment was minor, but now I know which tool to use depending on the situation.
 
---
+---
+
+## Installation
+
+To run The Dev Log locally, follow these steps.
+
+### Prerequisites
+
+No installation required. Just a modern web browser and optionally Git.
+
+### Steps
+
+You have two options.
+
+**Option 1:**
+
+1. Clone the repository:
+   `git clone https://github.com/pradhansushil/blog.git`
+2. Navigate into the project folder: `cd blog`
+
+**Option 2:**
+
+1. Go to the [repository](https://github.com/pradhansushil/blog)
+2. Click the green "Code" button and select "Download ZIP"
+3. Extract the downloaded folder
+4. Open index.html in your browser
+
+---
