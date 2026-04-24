@@ -57,3 +57,19 @@ blog/
 - **GitHub Pages** — Static hosting.
 
 ---
+
+## Developer Workflow & Standards
+
+### My Coding Approach
+
+I use AI as a mentor to help me understand logic under the hood and not just copy code. I want to deeply understand every implementation — from complex CSS layouts to Git workflows — so I can explain, debug, and maintain everything I build.
+
+### Version Control & Documentation
+
+- **Conventional Commits** — I follow the [Conventional Commits](https://www.conventionalcommits.org/) spec to keep project history clean, structured, and readable.
+
+### Coding Standards
+
+- **Semantic HTML** — I use proper HTML5 elements to provide structure and meaning, making it accessible.
+- **Modern CSS** — I use CSS custom properties for a uniform design system and Flexbox and CSS Grid for responsive layouts.
+- **Desktop-First Design** — I set base styles for large displays and then use `max-width` media queries for a smooth, responsive experience on smaller devices.
