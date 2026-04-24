@@ -22,3 +22,26 @@ The Dev Log is my personal blog where I share the projects I work on, the challe
 - **Project write-ups:** Each post covers what I built, why I decided to develop it, the obstacles I ran into, solutions I came up with, and lessons I picked up along the way.
 - **Dev origin story:** A dedicated post on how I got started in frontend development.
 - **Ongoing updates:** Add new posts whenever I finsih a project or improve my skills. This way, the blog really shows how I'm progressing over time.
+
+## Site Architecture
+
+This is a static blog where the browser loads `index.html` as the landing page, and individual posts are simple HTML files under `posts/`. The `archive/` directory contains `index.html`, which serves as the master list of all posts, while `styles.css` handles global styling.
+
+### File Structure
+
+```text
+blog/
+├── index.html          # Landing page — intro and latest posts
+├── styles.css          # Global styles for the entire site
+├── archive/
+│   └── index.html      # All Posts page — full archive of every post
+├── posts/
+│   ├── building-my-blog.html
+│   ├── how-i-found-my-path.html
+│   ├── my-first-ai-landing-page.html
+│   ├── my-first-deployment.html
+│   ├── post-continuation.html
+│   └── pump-and-iron.html
+├── .gitignore
+└── README.md
+```
