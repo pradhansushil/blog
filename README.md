@@ -73,3 +73,33 @@ I use AI as a mentor to help me understand logic under the hood and not just cop
 - **Semantic HTML** — I use proper HTML5 elements to provide structure and meaning, making it accessible.
 - **Modern CSS** — I use CSS custom properties for a uniform design system and Flexbox and CSS Grid for responsive layouts.
 - **Desktop-First Design** — I set base styles for large displays and then use `max-width` media queries for a smooth, responsive experience on smaller devices.
+
+---
+
+## Challenges & Solutions
+
+### Run npm run build after creating submodule
+
+- **Problem:** I added and pushed the Git submodule, then ran `npm run build`, so it ended up being two separate pushes for a single deployment.
+
+The /dist folder wasn’t there the first time I pushed the submodule. After running the build, I had to commit and push the newly generated /dist folder in a second push.
+
+- **Fix:** Next time, I’ll build the project first so the `/dist` folder is already there, then create and push the submodule. That’s one clean push, all at once.
+
+### Footer did not stay at bottom of page
+
+- **Problem:** On shorter pages, the footer showed up halfway up the screen instead of staying at the bottom.
+
+- **Cause:** The `<html>` and `<body>` elements didn’t have `height: 100%`, so the page didn’t take up the full viewport height.
+
+- **Fix:** Set `height: 100%` on both `html` and `body`, then use Flexbox so the main content stretches and naturally pushes the footer to the bottom.
+
+### Blog Cards Didn't Align at the Top
+
+- **Problem:** Two blog cards in the same row didn’t align at the top — one sat slightly lower than the other.
+
+- **Cause:** CSS Grid doesn’t automatically make items in the same row equal height, which led to the misalignment.
+
+- **Fix:** I learned that equal heights are easier with Flexbox. I kept Grid for its responsiveness since the misalignment was minor, but now I know which tool to use depending on the situation.
+
+--
