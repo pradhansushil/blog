@@ -27,6 +27,8 @@ The Dev Log is my personal blog where I share the projects I work on, the challe
 
 This is a static blog where the browser loads `index.html` as the landing page, and individual posts are simple HTML files under `posts/`. The `archive/` directory contains `index.html`, which serves as the master list of all posts, while `styles.css` handles global styling.
 
+---
+
 ### File Structure
 
 ```text
@@ -45,3 +47,13 @@ blog/
 ├── .gitignore
 └── README.md
 ```
+
+---
+
+## Tech Stack
+
+- **HTML5** — Semantic markup and accessibility best practices.
+- **CSS3** — Flexbox, Grid, and Custom Properties (variables).
+- **GitHub Pages** — Static hosting.
+
+---
