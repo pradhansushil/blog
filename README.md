@@ -21,7 +21,7 @@ The Dev Log is my personal blog where I share the projects I work on, the challe
 
 - **Project write-ups:** Each post covers what I built, why I decided to develop it, the obstacles I ran into, solutions I came up with, and lessons I picked up along the way.
 - **Dev origin story:** A dedicated post on how I got started in frontend development.
-- **Ongoing updates:** Add new posts whenever I finsih a project or improve my skills. This way, the blog really shows how I'm progressing over time.
+- **Ongoing updates:** Add new posts whenever I finish a project or improve my skills. This way, the blog really shows how I'm progressing over time.
 
 ## Site Architecture
 
@@ -78,13 +78,9 @@ I use AI as a mentor to help me understand logic under the hood and not just cop
 
 ## Challenges & Solutions
 
-### Run npm run build after creating submodule
+### Switching from Astro to plain HTML/CSS
 
-- **Problem:** I added and pushed the Git submodule, then ran `npm run build`, so it ended up being two separate pushes for a single deployment.
-
-The /dist folder wasn’t there the first time I pushed the submodule. After running the build, I had to commit and push the newly generated /dist folder in a second push.
-
-- **Fix:** Next time, I’ll build the project first so the `/dist` folder is already there, then create and push the submodule. That’s one clean push, all at once.
+I was going to use Astro (SSG) but ran into some deployment debugging that was taking too long. I made a judgement call to ship with simple HTML / CSS instead – the value of the blog is the content, not the framework. You can read the full story on my blog [post](https://pradhansushil.github.io/blog/posts/building-my-blog.html)
 
 ### Footer did not stay at bottom of page
 
