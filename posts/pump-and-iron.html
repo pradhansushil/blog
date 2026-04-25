@@ -11,8 +11,7 @@
   <body>
     <main class="main-content">
       <h1 class="main-title">
-        Building Pump &amp; Iron &mdash; React, Firebase, and a Lot of Lessons
-        Learned
+        Building Pump & Iron — React, Firebase, and a Lot of Lessons Learned
       </h1>
 
       <p>
@@ -29,15 +28,15 @@
         I even thought about pitching the final product to the gym owner.
         However, I've been facing some personal challenges lately, and selling
         is a whole different skill that I'm not ready to tackle right now. So
-        for now, Pump &amp; Iron exists as a portfolio project, and I'm okay
-        with that. Building it with a real business in mind made it feel
-        different from anything else I've created.
+        for now, Pump & Iron exists as a portfolio project, and I'm okay with
+        that. Building it with a real business in mind made it feel different
+        from anything else I've created.
       </p>
 
       <section id="what-it-does">
-        <h2 class="section-title">What Pump &amp; Iron Does</h2>
+        <h2 class="section-title">What Pump & Iron Does</h2>
         <p>
-          Pump &amp; Iron is a gym management web app designed for two types of
+          Pump & Iron is a gym management web app designed for two types of
           users: customers and admins.
         </p>
 
@@ -95,12 +94,12 @@
         <p>
           <strong>Array sorting without mutating state.</strong> In React, you
           should never change state directly. JavaScript's built-in
-          <code>.sort()</code> does just that &mdash; it modifies the original
-          array. The solution is to create a copy of the array first, then sort
-          that: <code>[...payments].sort(...)</code>. It's a small detail, but
-          understanding why it matters &mdash; React tracks state by reference,
-          so changing it directly can cause missed updates and unexpected
-          behavior &mdash; felt like a significant breakthrough for me.
+          <code>.sort()</code> does just that — it modifies the original array.
+          The solution is to create a copy of the array first, then sort that:
+          <code>[...payments].sort(...)</code>. It's a small detail, but
+          understanding why it matters — React tracks state by reference, so
+          changing it directly can cause missed updates and unexpected behavior
+          — felt like a significant breakthrough for me.
         </p>
 
         <p>
@@ -108,9 +107,9 @@
           integrate Stripe in this demo, but I researched how real apps manage
           credit card information. In short, they never store it. Card details
           go straight from the user's browser to Stripe's servers, and Stripe
-          returns a token. That token is what gets stored in the database
-          &mdash; never the actual card number. Understanding this helped me
-          think beyond just making things work, which is something I can discuss
+          returns a token. That token is what gets stored in the database —
+          never the actual card number. Understanding this helped me think
+          beyond just making things work, which is something I can discuss
           clearly in an interview.
         </p>
 
@@ -132,11 +131,10 @@
           comfortable with React and Tailwind, yet I decided to build a
           full-stack production-style app almost entirely from scratch. That was
           too ambitious. If I could go back, I would have opted for something
-          smaller &mdash; maybe just an admin dashboard and a member dashboard
-          with a simple landing page. For anything beyond that, a
-          straightforward "coming soon" message would have sufficed. That
-          approach would better showcase my abilities without overwhelming
-          myself over 3 to 4 months.
+          smaller — maybe just an admin dashboard and a member dashboard with a
+          simple landing page. For anything beyond that, a straightforward
+          "coming soon" message would have sufficed. That approach would better
+          showcase my abilities without overwhelming myself over 3 to 4 months.
         </p>
 
         <p>
@@ -151,7 +149,7 @@
 
         <p>
           The last mistake was related to pseudocode. I used an AI to help plan
-          the project, and the output was more of a structured blueprint &mdash;
+          the project, and the output was more of a structured blueprint —
           phases, steps, what to build, and in what order. That was helpful, but
           it wasn't true pseudocode. Real pseudocode would have let me think
           through the actual logic before writing it. I didn't know the
@@ -169,18 +167,18 @@
 
         <p>
           <strong>The cancel booking bug.</strong> At first, it seemed like a
-          single bug: clicking "Cancel" on a booking did nothing &mdash; no UI
-          update, no notification, nothing. It turned out there were five
-          separate issues hidden within that one bug. I forgot an
+          single bug: clicking "Cancel" on a booking did nothing — no UI update,
+          no notification, nothing. It turned out there were five separate
+          issues hidden within that one bug. I forgot an
           <code>await</code> keyword, so the function returned a Promise object
           instead of the actual data. The wrapper function that called it wasn't
-          async, either, creating what's called an orphaned Promise &mdash; it
-          ran, but its outcome was silently ignored. Additionally, the display
-          and cancel logic referenced two different data sources, causing them
-          to be out of sync. There was also a field mismatch where I was using
-          <code>booking.id</code>, searching by <code>b.classId</code> &mdash;
-          two distinct values that wouldn't match. Lastly, the booking objects
-          in Firestore didn't have a <code>classId</code> field, so the code
+          async, either, creating what's called an orphaned Promise — it ran,
+          but its outcome was silently ignored. Additionally, the display and
+          cancel logic referenced two different data sources, causing them to be
+          out of sync. There was also a field mismatch where I was using
+          <code>booking.id</code>, searching by <code>b.classId</code> — two
+          distinct values that wouldn't match. Lastly, the booking objects in
+          Firestore didn't have a <code>classId</code> field, so the code
           attempted to update a document using <code>undefined</code> as an ID.
           Five issues, one bug. This taught me a lot about how async code works
           and the importance of having a single source of truth.
@@ -251,8 +249,8 @@
           This project frustrated me more than anything I've built so far. Yet,
           it also taught me more than anything else I've done. I went in with
           almost no knowledge of React and came out with a full-stack app and a
-          clearer understanding of my capabilities &mdash; and what I still need
-          to improve. That matters.
+          clearer understanding of my capabilities — and what I still need to
+          improve. That matters.
         </p>
       </section>
     </main>
