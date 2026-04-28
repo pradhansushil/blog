@@ -157,20 +157,15 @@
             here’s a reconstructed list based on memory.
           </p>
 
-          <h3 class="subheading">
-            Ran <code>npm run build</code> After Creating the Submodule
-          </h3>
+          <h3 class="subheading">Switching from Astro to Plain HTML/CSS</h3>
           <p>
-            <strong>Reason:</strong> I initially pushed the submodule and then
-            ran <code>npm run build</code> to generate the
-            <code>/dist</code> folder. This resulted in pushing to GitHub twice
-            — once for the submodule and again for the built output.
+            <strong>Reason:</strong> I was going to use <code>Astro</code> (SSG)
+            but ran into some deployment debugging that was taking too long.
           </p>
-
           <p>
-            <strong>Fix:</strong> Next time, I’ll build the project first, then
-            create and push the submodule. That way, <code>/dist</code> is
-            already included and doesn’t require a second push.
+            <strong>Fix:</strong> I made a judgement call to ship with simple
+            <code>HTML</code> / <code>CSS</code> instead — the value of the blog
+            is the content, not the framework.
           </p>
 
           <h3 class="subheading">
