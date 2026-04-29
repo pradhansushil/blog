@@ -128,6 +128,7 @@ footer {
 
 .main-content {
   margin: var(--space-lg) auto;
+  max-width: 43.75rem;
   padding: var(--space-lg);
 }
 
@@ -258,11 +259,6 @@ ul.tools-list {
     font-size: 1.25rem;
   }
 
-  .main-content {
-    margin: var(--space-lg) 2rem;
-    padding: 0;
-  }
-
   footer p {
     font-size: 1rem;
   }
@@ -294,10 +290,5 @@ ul.tools-list {
   .post-title,
   .index-subheading {
     font-size: 1.25rem;
-  }
-
-  .main-content {
-    margin: var(--space-lg) 3.75rem;
-    padding: 0;
   }
 }
