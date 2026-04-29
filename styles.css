@@ -58,8 +58,16 @@ main {
 }
 
 .introduction p + p,
-section p + p {
+section p + p,
+.my-story p + p {
   margin-top: var(--space-lg);
+}
+
+.my-story h2 {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-block: var(--space-xl) var(--space-lg);
 }
 
 .intro {
@@ -246,6 +254,10 @@ ul.tools-list {
     font-size: 1.125rem;
   }
 
+  .my-story h2 {
+    font-size: 1.5rem;
+  }
+
   p {
     font-size: 1.0625rem;
   }
@@ -277,6 +289,10 @@ ul.tools-list {
 
   .subheading {
     font-size: 1.25rem;
+  }
+
+  .my-story h2 {
+    font-size: 1.75rem;
   }
 
   p {
