@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Dev Log | Blog Updates</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1 class="main-title">
+          Updating The Dev Log — Fixes, Refactors, and a Fresh Start
+        </h1>
+        <section id="introduction">
+          <p>
+            When I first put this blog online, I was just happy it was there. It
+            worked, it loaded, and that seemed good enough at the time. But the
+            more I looked at it, the more I noticed little things that bothered
+            me — not how it looked, but how it was put together. So, over the
+            last week or so, I went back and really tidied things up.
+          </p>
+
+          <p>Here's what I changed and why I did it.</p>
+        </section>
+
+        <section id="blog-name-change">
+          <h2 class="section-title">Changing the Blog's Name</h2>
+          <p>
+            This blog used to be called "The Sushil's Desk." That was just the
+            first name I thought of when I was setting things up, but it never
+            quite felt right. I changed it to "The Dev Log" instead. It's a
+            cleaner name, makes it clear what the site is about, and honestly,
+            it just sounds more like something I'd actually want to read. I also
+            made sure all the page titles matched, which is one of those small
+            details that makes the whole site feel more organized.
+          </p>
+        </section>
+
+        <section id="home-ux-fix">
+          <h2 class="section-title">Fixing the UX on the Homepage</h2>
+          <p>
+            This part was probably the trickiest. I went through the HTML on
+            almost every page to make sure I was using the correct tags for
+            their actual purpose. For example, post dates are now inside
+            <code>&lt;time&gt;</code> elements instead of
+            <code>&lt;small&gt;</code> tags. And the main content on blog posts
+            is now wrapped in an <code>&lt;article&gt;</code> element. I also
+            added <code>aria-label</code> attributes to links that needed more
+            context, like those "Read More" links that, without a label, don't
+            tell a screen reader anything helpful. Plus, I put
+            <code>sr-only</code> text on those links so they now say something
+            like "Read more about [post title]" instead of just "Read more."
+          </p>
+
+          <p>
+            To be honest, I didn't really consider accessibility much when I
+            first built this. Going back and fixing it was a bit of a chore, but
+            now I truly understand why it's important. It's not just for screen
+            readers either. Using semantic HTML correctly also leads to cleaner
+            code, and it shows you actually know what the elements are for, not
+            just how they make things appear.
+          </p>
+        </section>
+
+        <section id="mobible-first">
+          <h2 class="section-title">Mobile—First CSS</h2>
+          <p>
+            I wrote my original CSS for desktops first, which I actually
+            mentioned in my very first post was a mistake I needed to fix. I
+            finally got around to doing that by rewriting it to use
+            <code>min-width</code> breakpoints instead of
+            <code>max-width</code> media queries. The site doesn't look much
+            different, but it's a better way to do things — especially since
+            most people will probably visit on their phones.
+          </p>
+
+          <p>
+            I also made the content width the same across all pages. The blog
+            posts and the main index page had slightly different
+            <code>max-width</code>s, which was making things look a bit off. I
+            only noticed it when I took a closer look.
+          </p>
+        </section>
+
+        <section id="homepage-improvement">
+          <h2 class="section-title">Improving the Homepage Experience</h2>
+          <p>
+            One thing that bothered me was how, if you landed on the homepage
+            for the first time, it wasn't clear right away what the site was
+            about or who it was for. So, I added a hero section with a short
+            intro – just a few lines explaining what The Dev Log is and what
+            sort of things you'll find here. It only takes a few seconds to
+            read, but that's exactly why it's there. You should get it
+            instantly.
+          </p>
+
+          <p>
+            I also put a link back to the home page on all the post pages, which
+            seems like a no—brainer, but I totally forgot it the first time.
+          </p>
+        </section>
+
+        <section id="readme-file">
+          <h2 class="section-title">About the README File</h2>
+          <p>
+            The repository now has a good README file. I filled it out bit by
+            bit, adding things like a live demo link, a table of contents, an
+            about section, details on the tech used, the site's layout, file
+            structure, how a developer would work on it, and a section for
+            challenges and solutions. At the same time, I also renamed the
+            <code>work/</code> folder to <code>archive/</code> and moved all the
+            post files into a dedicated <code>posts/</code> folder, so
+            everything is organized much better now.
+          </p>
+
+          <p>
+            The README probably took more time than I thought it would, but it's
+            something a recruiter or another developer would check to understand
+            your project and how you approach things. I'd much rather have a
+            solid one than skip it entirely.
+          </p>
+        </section>
+
+        <section id="what-i-learned">
+          <h2 class="section-title">What I Learned</h2>
+          <p>
+            The biggest thing I learned was how to write a good README. I never
+            really gave it much thought before — I'd either skip it or just put
+            down a single sentence. Really documenting the project well made me
+            realize it's not only for others. It actually forces you to think
+            clearly about what you built and why. I plan to write one for every
+            project from now on, even going back to add them to old ones.
+          </p>
+          <p>
+            Semantic HTML was the other major takeaway. I knew the basics, but I
+            wasn't really thinking about why I was using certain tags. It's one
+            thing to know an <code>&lt;article&gt;</code> tag exists, and
+            another to truly understand when and why to use it. The same goes
+            for accessibility — adding <code>aria-label</code> and
+            <code>sr-only</code> text felt like tiny details, but they're the
+            kind of thing that shows the difference between someone who just
+            gets something to work and someone who builds it the right way.
+          </p>
+        </section>
+
+        <section id="improvements">
+          <h2 class="section-title">What's Next</h2>
+          <p>
+            Really, the only thing missing for me is a basic admin page — a
+            simple form where I can type in a title, date, and the post itself,
+            hit publish, and have the site handle the rest. Manually writing
+            HTML for each new post gets old fast. Fixing that would take care of
+            the most annoying part right away.
+          </p>
+
+          <p>
+            Other than that, I wouldn't touch the stack. No frameworks, no fancy
+            build tools — just plain HTML and CSS, and maybe a little JavaScript
+            for boring, repetitive bits like updating the footer or the year
+            automatically. The whole point of this blog is to show my thought
+            process. Adding a bunch of shiny extras just to keep up with trends
+            would distract from that. Static keeps things simple and keeps me
+            focused.
+          </p>
+
+          <p>
+            Comments might be nice down the road, but honestly, I haven't even
+            decided if I'll put this online. No sense building a comment section
+            if I don't. That's a decision for later — and if I do decide to go
+            public, then I'll figure out how to fit comments in without messing
+            up the static vibe I've got now.
+          </p>
+        </section>
+
+        <section id="final">
+          <h2 class="section-title">Final Thoughts</h2>
+          <p>
+            Honestly, nothing here jumps out at you. The blog still looks just
+            like it did before. But now, it's done right — or at least a whole
+            lot better. I used semantic HTML, started the CSS with mobile in
+            mind, made sure the links are accessible, shaped up the homepage,
+            and wrote a README that actually tells you what's going on.
+          </p>
+
+          <p>
+            This is the stuff I want to get right from the beginning on my next
+            projects. For now, I'm just glad I took the time to go back and fix
+            it.
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
