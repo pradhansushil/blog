@@ -148,6 +148,11 @@ footer {
   margin-bottom: var(--space-lg);
 }
 
+.back-to-home {
+  display: inline-block;
+  margin-top: var(--space-xl);
+}
+
 /* ===== Only for homepage ===== */
 
 .hero-identity {
