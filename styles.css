@@ -112,6 +112,15 @@ section + section {
   margin-top: var(--space-xl);
 }
 
+code {
+  background-color: #3d5166;
+  color: #f4f4f4;
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
 /* ===== Containers ===== */
 
 .main-index {
@@ -276,6 +285,10 @@ ul.tools-list {
     font-size: 1.25rem;
   }
 
+  code {
+    font-size: 1.0625rem;
+  }
+
   footer p {
     font-size: 1rem;
   }
@@ -301,6 +314,10 @@ ul.tools-list {
   }
 
   p {
+    font-size: 1.125rem;
+  }
+
+  code {
     font-size: 1.125rem;
   }
 
