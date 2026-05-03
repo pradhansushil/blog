@@ -105,6 +105,10 @@ p {
   text-align: justify;
 }
 
+p span.inline {
+  hyphens: none;
+}
+
 a {
   color: #1abc9c;
   text-decoration: none;
