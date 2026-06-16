@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Dev Log | Portfolio Update</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="main-content">
+      <article>
+        <h1 class="main-title">
+          Updating My Portfolio — Here's What I Remember
+        </h1>
+
+        <section id="introduction">
+          <p>
+            Here I am, updating another project (again). Honestly, I didn't
+            learn much from this round — maybe a bit of JavaScript, but mostly
+            it was just chipping away at small fixes. I had actually made a list
+            of everything I updated, but I accidentally deleted it, so this is
+            less of a changelog and more "here's what I remember doing."
+          </p>
+        </section>
+
+        <section id="poppins-consistency">
+          <h2 class="section-title">Using Poppins for All Headers</h2>
+          <p>
+            I'd originally used Poppins in just one spot to make something stand
+            out, without much thought behind it. But after posting my portfolio
+            on FreeCodeCamp for review, two different users pointed out that I
+            should be using Poppins across all my headers for consistency. That
+            feedback stuck with me, so this update was about finally following
+            through on it — Poppins now applies across my nav logo, section
+            titles, hero title and tagline, and all <code>&lt;h3&gt;</code>s.
+            Turns out the font was there the whole time, I just wasn't using it.
+          </p>
+        </section>
+
+        <section id="project-cards">
+          <h2 class="section-title">Project Cards: From Bulky to Compact</h2>
+          <p>
+            The old project cards were doing too much. Each one had a list of
+            bullet points describing the tech stack, images that didn't have a
+            consistent size, and separate links scattered around with no clear
+            hierarchy. On smaller screens, a single card could end up taller
+            than the viewport — which is never a good sign.
+          </p>
+
+          <p>
+            The fix started with the tech stack. Instead of a vertical bullet
+            list, each technology now gets its own pill — small, rounded, and
+            inline. They wrap naturally regardless of how many there are, and
+            they take up a fraction of the vertical space the old list did. This
+            alone made a noticeable difference.
+          </p>
+
+          <p>
+            Next was the images. I added <code>object-fit: cover</code> with a
+            fixed height so every project image is cropped to the same
+            dimensions, no matter its original size or aspect ratio. No more
+            cards stretching awkwardly because one screenshot happened to be
+            taller than the others.
+          </p>
+
+          <p>
+            The description text was also a bit too bright against the dark
+            background, fighting for attention with everything else on the card.
+            I darkened it slightly so it sits in the background more — the
+            project title and images do the talking, and the description is
+            there if you want more detail.
+          </p>
+
+          <p>
+            The biggest change, though, was making the entire card clickable.
+            Previously, only specific text was a link, which meant a lot of dead
+            space that looked clickable but wasn't. I restructured each card
+            from an <code>&lt;a&gt;</code> tag into a
+            <code>&lt;div&gt;</code> with a <code>data-href</code> attribute,
+            then added a click handler in JavaScript that opens that URL —
+            unless the click landed on one of the "GitHub" or "More Info" links,
+            which still work independently and open their own destinations. So
+            now you can click pretty much anywhere on the card to get to the
+            project, but the specific links still do their own thing.
+          </p>
+
+          <p>
+            Put together, the cards are smaller, cleaner, and easier to scan.
+            The theme for this one was simple: a card shouldn't be bigger than
+            the viewport.
+          </p>
+        </section>
+
+        <section id="skills-section">
+          <h2 class="section-title">Skills Section: A Little Rebalancing</h2>
+          <p>
+            Small tweaks here, but they added up. The Skills section had a
+            "Technical Skills" column and a "Soft Skills" column sitting side by
+            side with equal width — but technical skills had way more pills, so
+            the soft skills column ended up with a lot of empty space while
+            technical wrapped awkwardly.
+          </p>
+
+          <p>
+            The fix was giving them different flex ratios: technical gets
+            <code>flex: 2</code>, soft gets <code>flex: 1</code>. Technical now
+            has the room it needs, and the layout feels proportional instead of
+            forced.
+          </p>
+
+          <p>
+            While I was in there, I shortened "Technical Skills" and "Soft
+            Skills" to just "Technical" and "Soft" — the headers already sit
+            above a list of skills, so the word "Skills" was redundant. Centered
+            both headers too, which reads cleaner against the pills below.
+          </p>
+
+          <p>
+            Nothing groundbreaking, but it's the kind of fix that makes a
+            section feel intentional instead of just "good enough."
+          </p>
+        </section>
+
+        <section id="navbar">
+          <h2 class="section-title">
+            Nav Bar Identity: An Empty Nav Bar Finally Has a Name
+          </h2>
+          <p>
+            For the longest time, my nav bar was just... links. No branding, no
+            identity, just a row of nav items floating with nothing to anchor
+            them. It worked, but it felt like walking into a store with no sign
+            out front.
+          </p>
+
+          <h3 class="subheading">
+            Adding the <code>&lt;SP /&gt;</code> Wordmark
+          </h3>
+          <p>
+            I added a logo to the left side of the nav bar:
+            <code>&lt;SP /&gt;</code>, styled like a JSX component tag. It's a
+            small thing, but it ties together my initials with the "code"
+            identity I'm going for across the portfolio — and it gives the nav
+            bar an actual focal point instead of just trailing off into empty
+            space on the left.
+          </p>
+
+          <p>
+            I styled it in Poppins (continuing the consistency push from
+            earlier) at a larger size with the accent green, so it reads as a
+            logo rather than just another link.
+          </p>
+
+          <h3 class="subheading">Border-Radius Consistency on Nav Links</h3>
+          <p>
+            My nav links had inconsistent hover and active states — some had
+            borders, some didn't, and the rounding wasn't consistent between
+            them. On desktop, hovering or activating a link now gets a clean
+            <code>border-radius: 8px</code> with the accent green background,
+            matching the rounded style I'm using elsewhere (buttons, pills,
+            project cards). No more mismatched edges depending on which link
+            you're interacting with.
+          </p>
+
+          <h3 class="subheading">Fixing the Sticky Nav Scroll Offset</h3>
+          <p>
+            Since my header is <code>position: sticky</code>, clicking a nav
+            link would scroll the target section behind the nav bar — cutting
+            off the top of whatever you clicked on. The fix was
+            <code>scroll-padding-top</code> on the <code>&lt;html&gt;</code>
+            element, set to roughly the nav bar's height (with slightly
+            different values for mobile vs. desktop, since the nav bar's height
+            changes between breakpoints).
+          </p>
+
+          <p>
+            Now clicking "Skills" or "Projects" actually lands you where you'd
+            expect, with the section title fully visible below the nav.
+          </p>
+        </section>
+
+        <section id="contact-form">
+          <h2 class="section-title">
+            Contact Form Polish: Making It Feel Like Part of the Site
+          </h2>
+          <p>
+            Small update this time, but the contact form needed it. It was
+            working fine, but it looked like an afterthought — cramped, slightly
+            out of step with the rest of the site, and a bit awkward on desktop.
+          </p>
+
+          <h3 class="subheading">Placeholders That Actually Help</h3>
+          <p>
+            The inputs didn't have placeholder text before, just labels. I added
+            placeholders for name, email, and message so the fields show an
+            example of what's expected before you start typing. Small thing, but
+            it makes the form feel more finished.
+          </p>
+
+          <h3 class="subheading">Darker Inputs to Match the Nav</h3>
+          <p>
+            The input and textarea backgrounds were too light for the rest of
+            the page — they stood out in a way that didn't feel intentional. I
+            darkened them to <code>#2a2a2a</code>, which matches the navbar and
+            project card backgrounds. Now the form fits into the same visual
+            language as everything else instead of looking like it was dropped
+            in from a different design.
+          </p>
+
+          <h3 class="subheading">Responsive Width with <code>vw</code></h3>
+          <p>
+            This one I'll be honest about: I don't fully get <em>why</em> this
+            needed to change. The form's max-width was fixed at a fairly narrow
+            size, and on desktop it looked cramped compared to the rest of the
+            page. Someone reviewing my portfolio suggested widening it on larger
+            screens, and since the rest of their feedback had been solid, I went
+            with it — even without fully understanding the reasoning.
+          </p>
+
+          <p>
+            So on desktop, the form now uses <code>max-width: 40vw</code>
+            instead of a fixed value, letting it scale with the viewport instead
+            of staying boxed in. It does look better — more proportional, less
+            squeezed — so the suggestion was right. I just can't fully
+            articulate
+            <em>why</em> yet. Maybe that's something that clicks more as I build
+            more projects and get a better feel for how layouts should breathe
+            at different sizes.
+          </p>
+
+          <h3 class="subheading">Fixing the Empty Message Gap</h3>
+          <p>
+            The <code>#formMessage</code> element (used for success/error text
+            after submitting) was reserving space even when empty, leaving an
+            odd gap above the form. I added
+            <code>#formMessage:empty { display: none; }</code> so it only takes
+            up space when there's actually something to show.
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
